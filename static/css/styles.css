@@ -1,0 +1,32 @@
+/* Custom Styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+/* Main content wrapper */
+.content {
+    min-height: 100vh; /* Full viewport height */
+    overflow: hidden;  /* Prevent overflow initially */
+    position: relative; /* Position relative for scrolling effect */
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    z-index: -1; /* Place the footer behind the content */
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Ensure enough content to scroll */
+.scroll-content {
+    min-height: 200vh; /* Set this based on your page's content */
+}
