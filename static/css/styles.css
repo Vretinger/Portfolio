@@ -1,15 +1,134 @@
-/* Custom Styles */
-body, html {
-    height: 100%;
-    margin: 0;
-    scroll-behavior: smooth;
+
+#intro-section {
+    height: 100vh; /* Full viewport height */
+    background-color: #fafafa;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure no overflow from intro */
 }
 
-/* Main content wrapper */
-.content {
-    min-height: 100vh; /* Full viewport height */
-    overflow: hidden;  /* Prevent overflow initially */
-    position: relative; /* Position relative for scrolling effect */
+#intro-section .fixed-top{
+    top: 100px;
+}
+
+.text-content {
+    z-index: 2;
+    color: #333;
+}
+
+.text-content h1 {
+    font-size: 5rem; /* Larger text size */
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.text-content p {
+    font-size: 2rem; /* Larger paragraph text */
+    margin-bottom: 1.5rem;
+}
+
+.potrait {
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    transform: translateX(30px); /* Offset image slightly */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+#intro-section .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#intro-section .col-lg-6 {
+    flex: 1;
+}
+
+a.btn-primary {
+    font-size: 1.2rem; /* Make button text larger */
+    padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+    .text-content h1 {
+        font-size: 3rem; /* Adjust text size for smaller screens */
+    }
+    
+    .text-content p {
+        font-size: 1.5rem;
+    }
+
+    .potrait {
+        transform: translateX(0); /* Remove offset on smaller screens */
+        width: 100%;
+    }
+}
+
+
+#projects {
+    position: relative;
+    z-index: 1; /* Ensures projects section is on top */
+    background: white; /* Or any background color */
+    padding: 100px 0;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.4);
+    
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.carousel ul {
+    list-style-type: none;
+}
+
+/* Ensure all images have the same size */
+.carousel-image {
+    height: 75vh; /* Set the desired height */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    filter: blur(3px) brightness(60%); /* Soft blur and darkening effect */
+}
+
+/* Center the text and make it more prominent */
+.carousel-caption {
+    position: absolute;
+    transform: translatey(-50%);
+    text-align: center;
+}
+
+.carousel-caption h5, .carousel-caption p {
+    font-size: 1.8rem; /* Increase text size */
+    color: #ffffff; /* Ensure text is white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Make text stand out with shadow */
+}
+
+.carousel-caption .btn {
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent button */
+    border-color: white; /* White outline */
+    color: white; /* Button text color */
+}
+
+/* Hover effect for buttons */
+.carousel-caption .btn:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Lighten background on hover */
+    color: white;
+    border-color: white;
+}
+
+
+/* Invisible container to create space for the footer */
+.footer-spacer {
+    height: 30vh; /* Same height as the footer */
 }
 
 /* Footer */
