@@ -1,5 +1,5 @@
 .content {
-    background-color: #fffdf8;
+    background-color: #747474;
 }
 
 
@@ -29,8 +29,9 @@
 }
 
 /* Active nav link style */
-.navbar .nav-link.active {
+.navbar-nav .nav-link.active {
     border: 2px solid #000000;
+    color: #fff !important;
 }
 
 
@@ -54,7 +55,7 @@
 
 #intro-section {
     height: 100vh; /* Full viewport height */
-    background-color: #e0f7db;
+    background-color: #333;
     position: relative;
     z-index: 1;
     display: flex;
@@ -69,13 +70,14 @@
 
 .text-content {
     z-index: 2;
-    color: #333;
+    color: #afafaf;
 }
 
 .text-content h1 {
-    font-size: 5rem; /* Larger text size */
+    font-size: 6rem; /* Larger text size */
     font-weight: bold;
     line-height: 1.2;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 1);
 }
 
 .text-content p {
@@ -108,30 +110,16 @@ a.btn-primary {
     padding: 1rem 2rem;
 }
 
-@media (max-width: 768px) {
-    .text-content h1 {
-        font-size: 3rem; /* Adjust text size for smaller screens */
-    }
-    
-    .text-content p {
-        font-size: 1.5rem;
-    }
-
-    .potrait {
-        transform: translateX(0); /* Remove offset on smaller screens */
-        width: 100%;
-    }
-}
-
 
 #projects {
     position: relative;
     z-index: 1;
-    background: #333;
+    background-color: #8b8b8bab;
     padding: 150px 0;
     box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px)
+    backdrop-filter: blur(10px)
 }
+
 
 .parallax {
     background-attachment: fixed;
@@ -149,13 +137,6 @@ a.btn-primary {
     height: 75vh; /* Set the desired height */
     object-fit: cover; /* Ensures the image covers the container without distortion */
     filter: blur(3px) brightness(60%); /* Soft blur and darkening effect */
-}
-
-/* Center the text and make it more prominent */
-.carousel-caption {
-    position: absolute;
-    transform: translatey(-50%);
-    text-align: center;
 }
 
 .carousel-caption h5, .carousel-caption p {
@@ -179,6 +160,11 @@ a.btn-primary {
 }
 
 
+.contact-container {
+    padding-top: 50px;
+}
+
+
 /* Invisible container to create space for the footer */
 .footer-spacer {
     height: 30vh; /* Same height as the footer */
@@ -193,6 +179,7 @@ a.btn-primary {
 
 .footer .container-fluid {
 background-color: #fffdf8;
+padding-top: 50px;
 }
 
 .footer h2 {
@@ -219,22 +206,171 @@ background-color: #fffdf8;
     color: #6c757d;
 }
 
-.container {
-    max-width: 960px;
-}
-
 .footer {
     bottom: 0;
 }
 
+
+/* General styles */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+h2.section-subtitle {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h2.section-subtitle::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.section-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Adding subtle transitions and hover effects */
+.section-text {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.about-spacer {
+    height: 30vh; /* Same height as the footer */
+}
+
+#about-intro-section {
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure no overflow from intro */
+}
+
+#about-intro-section .text-content{
+    color: #fff;
+    height: 80vh;
+}
+
+.about-section {
+    position: relative;
+    background-color: #333;
+    z-index: 2;
+}
+
+.about-container {
+    height: 80vh;
+    position: relative;
+    background-color: #8b8b8bab;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    color: #fff;
+}
+
+.about-potrait {
+    max-width: 400px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    transform: translateX(30px);
+    transform: translatey(30px); /* Offset image slightly */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.fixed-image {
+    position: fixed;
+    top: 35px;
+    right: 20%;
+}
+
+
+/* Media Queries for responsiveness */
 @media (max-width: 768px) {
+    .text-content h1 {
+        font-size: 3rem; /* Adjust text size for smaller screens */
+    }
+
+    .text-content p {
+        font-size: 1.5rem;
+    }
+
+    h1.section-title {
+        font-size: 28px;
+    }
+
+    h2.section-subtitle {
+        font-size: 22px;
+    }
+
+    .section-text {
+        font-size: 16px;
+    }
+
+    .potrait {
+        transform: translateX(0); /* Remove offset on smaller screens */
+        width: 70%;
+    }
+
+    .about-potrait {
+        transform: translateX(0);
+        transform: translatey(20px);
+        width: 60%;
+    }
+
+    .carousel-caption h5, .carousel-caption p {
+        font-size: 1.5rem;
+    }
+
+    #about-intro-section .text-content h1 {
+        position: absolute;
+        top: 50%;
+        right: 25%;
+        text-align: center !important;
+    }
+
+    .about-container {
+        height: 100%;
+    }
+    
+    .contact-container {
+        min-height: 100vh; /* Take up the full viewport height */
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center; /* Center form vertically */
+        padding-top: 0;
+        z-index: 2;
+        background-color: #333;
+    }
+
     .footer .col-md-6, .footer .col-md-3 {
         text-align: center;
         margin-bottom: 20px;
     }
-}
 
-/* Ensure enough content to scroll */
-.scroll-content {
-    min-height: 200vh; /* Set this based on your page's content */
+    .footer-spacer {
+        height: 55vh; /* Same height as the footer */
+    }
+
+    .footer .portrait {
+        width: 40%;
+        height: auto;
+    }
+
 }

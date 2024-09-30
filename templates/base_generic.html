@@ -14,7 +14,7 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">Hampus Vretinger</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
               <a class="nav-link {% if request.path == '/#projects' %}active{% endif %}" id="projects-link" href="/#projects">Projects</a>
             </li>
             <li class="nav-item px-1">
-              <a class="nav-link {% if request.path == '#about' %}active{% endif %}" href="{% url 'about' %}">About</a>
+              <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="{% url 'about' %}">About</a>
             </li>
             <li class="nav-item px-1">
               <a class="nav-link {% if request.path == '/contact_me/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
@@ -59,7 +59,7 @@
                   <div class="footer-buttons">
                       <a href="https://www.linkedin.com/in/hampus-vretinger/" class="btn btn-outline-primary" target="_blank">LinkedIn</a>
                       <a href="{% static 'docs/CV.pdf' %}" class="btn btn-outline-secondary" download>Download CV</a>
-                      <a href="#about" class="btn btn-outline-info">About Me</a>
+                      <a href="{% url 'about' %}" class="btn btn-outline-info">About Me</a>
                       <a href="{% url 'contact' %}" class="btn btn-outline-success">Contact Me</a>
                   </div>
               </div>

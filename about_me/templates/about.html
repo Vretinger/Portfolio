@@ -1,16 +1,46 @@
 {% extends 'base_generic.html' %}
-
+{% load static %}
 {% block content %}
-<div class="container">
-    <h2>About Me</h2>
-    <p>Write a brief introduction about yourself here.</p>
-    <h3>My Skills</h3>
-    <ul>
-        <li>Skill 1</li>
-        <li>Skill 2</li>
-        <li>Skill 3</li>
-    </ul>
-    <h3>My Experience</h3>
-    <p>Details about your work experience, education, or projects.</p>
+<div class="container-fluid p-0 about-section">
+
+    <section id="about-intro-section" class="parallax">
+        <div class="container-fluid text-center">
+            <div class="row">
+                <!-- Image Column (fixed position) -->
+                <div class="col-md-4 offset-md-6 image-content py-5 order-md-2 order-1">
+                    <img src="{% static 'images/ResumePotrait.jpg' %}" alt="Potrait Image" class="about-potrait fixed-image">
+                </div>
+                <!-- Text Column -->
+                <div class="col-md-6 text-content py-5 text-end order-md-1 order-2">
+                    <h1>Full-Stack<br>Developer<br>based in<br>Stockholm</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <div class="container-fluid about-container p-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="section-subtitle">Professional Background</h2>
+            </div>
+            <div class="col-md-6">
+                <p class="section-text">
+                    I hold a Higher Vocational Education Diploma in Game Design, having studied and honed my skills over five years in the field. My career has also led me to work in support centers with a strong focus on Quality Assurance (QA), where I became proficient in handling queries and Excel. My problem-solving abilities have been my strongest asset throughout my professional journey, allowing me to approach challenges analytically and develop innovative solutions.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="section-subtitle">Personal Interests</h2>
+            </div>
+            <div class="col-md-6">
+                <p class="section-text">
+                    In recent years, I have expanded my skill set by studying Full-Stack Development. This portfolio showcases my abilities as a full-stack developer, with projects involving dynamic booking systems, PostgreSQL integration, responsive design, and more. My work reflects my passion for creating seamless user experiences, leveraging tools like Django, HTML, CSS, and JavaScript, while ensuring functionality and performance through thorough testing and attention to detail.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
