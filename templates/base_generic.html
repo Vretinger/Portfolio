@@ -13,29 +13,32 @@
     
 </head>
 <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Hampus Vretinger</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#projects">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">Hampus Vretinger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item px-1">
+              <a class="nav-link {% if request.path == '/' %}active{% endif %}" id="home-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item px-1">
+              <a class="nav-link {% if request.path == '/#projects' %}active{% endif %}" id="projects-link" href="/#projects">Projects</a>
+            </li>
+            <li class="nav-item px-1">
+              <a class="nav-link {% if request.path == '#about' %}active{% endif %}" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item px-1">
+              <a class="nav-link {% if request.path == '/contact_me/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
+            </li>
+          </ul>
         </div>
-      </nav>    
-    </header>  
+      </div>
+    </nav>    
+  </header>
     <div class="content">
         {% block content %}{% endblock %}
 
@@ -44,11 +47,36 @@
     </div>
 
     <footer class="footer">
-        <div class="container fixed-bottom">
-            <h2>Get in Contact</h2>
-            <p>If you'd like to reach out, feel free to <a href="#contact">contact me</a>.</p>
-            <p>&copy; 2024 My Portfolio</p>
-        </div>
-    </footer>
+      <div class="container-fluid text-center fixed-bottom">
+          <div class="row align-items-center justify-content-center g-0 pt-3">
+              <!-- Portrait Image -->
+              <div class="col-md-auto">
+                  <img src="{% static 'images/ResumePotrait.jpg' %}" alt="Your Portrait" class="rounded-circle img-fluid portrait">
+              </div>
+              <!-- Contact & Links -->
+              <div class="col-md-6">
+                  <h1>Lets connect!</h1>
+                  <div class="footer-buttons">
+                      <a href="https://www.linkedin.com/in/hampus-vretinger/" class="btn btn-outline-primary" target="_blank">LinkedIn</a>
+                      <a href="{% static 'docs/CV.pdf' %}" class="btn btn-outline-secondary" download>Download CV</a>
+                      <a href="#about" class="btn btn-outline-info">About Me</a>
+                      <a href="{% url 'contact' %}" class="btn btn-outline-success">Contact Me</a>
+                  </div>
+              </div>
+          </div>
+          <div class="row justify-content-between">
+              <!-- Copyright -->
+              <div class="col-md-3 align-self-end">
+                  <p>&copy; Hampus Vretinger</p>
+              </div>
+              <div class="col-md-3">
+                <p>Designed by me</p>
+                <p>Developed by me</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <script src="{% static 'js/nav_link_scroll.js' %}"></script>
 </body>
 </html>

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
+from decouple import Config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +28,10 @@ SECRET_KEY = 'django-insecure-0=!=92t=%!t)l4@8+s^x8&tw6&hsp3db9lzz!n90bi@v_3r@(3
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-vretinger-portfolio-ls4fh76c0ws.ws-eu116.gitpod.io']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-vretinger-portfolio-ls4fh76c0ws.ws-eu116.gitpod.io',
+]
 
 
 # Application definition
@@ -125,3 +130,14 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Load environment variables from the password.env file
+config = Config('password.env')  # ensure .env or password.env is loaded properly
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.live.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')

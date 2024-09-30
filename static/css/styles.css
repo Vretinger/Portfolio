@@ -1,7 +1,60 @@
+.content {
+    background-color: #fffdf8;
+}
+
+
+/* Hide the navbar background */
+.navbar {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* Style the nav buttons to be oval-shaped */
+.navbar .nav-link {
+    padding: 4px 10px; /* Reduced padding for a thinner appearance */
+    border-radius: 25px; /* Adjusted radius for a more oval shape */
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid #fff;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(5px)
+}
+
+/* Hover effect to make the buttons look more interactive */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+/* Active nav link style */
+.navbar .nav-link.active {
+    border: 2px solid #000000;
+}
+
+
+/* Style for the navbar brand */
+.navbar .navbar-brand {
+    font-size: 1.5rem; /* Increased font size for prominence */
+    font-weight: bold; /* Bold font weight */
+    color: #fff; /* White color for text */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
+}
+
+/* Hover effect for the navbar brand */
+.navbar .navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.8); /* Lighter color on hover */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1); /* Darker shadow on hover for contrast */
+    background-color: rgba(110, 110, 110, 0.2); /* Light background on hover */
+    border-radius: 5px; /* Slightly round corners */
+    padding: 4px 10px; 
+}
 
 #intro-section {
     height: 100vh; /* Full viewport height */
-    background-color: #fafafa;
+    background-color: #e0f7db;
     position: relative;
     z-index: 1;
     display: flex;
@@ -73,11 +126,11 @@ a.btn-primary {
 
 #projects {
     position: relative;
-    z-index: 1; /* Ensures projects section is on top */
-    background: white; /* Or any background color */
-    padding: 100px 0;
+    z-index: 1;
+    background: #333;
+    padding: 150px 0;
     box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.4);
-    
+    backdrop-filter: blur(5px)
 }
 
 .parallax {
@@ -133,16 +186,52 @@ a.btn-primary {
 
 /* Footer */
 .footer {
-    position: fixed;
+    margin-top: 30px;
+    position: relative;
+    z-index: 0;
+}
+
+.footer .container-fluid {
+background-color: #fffdf8;
+}
+
+.footer h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.footer .portrait {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #007bff;
+    margin-bottom: 10px;
+}
+
+.footer .footer-buttons a {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.footer p {
+    margin: 0;
+    color: #6c757d;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.footer {
     bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    z-index: -1; /* Place the footer behind the content */
-    height: 100vh; /* Full height of the viewport */
+}
+
+@media (max-width: 768px) {
+    .footer .col-md-6, .footer .col-md-3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 }
 
 /* Ensure enough content to scroll */
