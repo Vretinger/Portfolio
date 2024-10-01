@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-0=!=92t=%!t)l4@8+s^x8&tw6&hsp3db9lzz!n90bi@v_3r@(3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-vretinger-portfolio-ls4fh76c0ws.ws-eu116.gitpod.io','www.hampusvretinger.com', 'hampusvretinger.herokuapp.com','.herokuapp.com']
+ALLOWED_HOSTS = ['8000-vretinger-portfolio-ls4fh76c0ws.ws-eu116.gitpod.io','www.hampusvretinger.com','hampusvretinger.com', 'hampusvretinger.herokuapp.com','.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-vretinger-portfolio-ls4fh76c0ws.ws-eu116.gitpod.io',]
 
