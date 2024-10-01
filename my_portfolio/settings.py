@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0=!=92t=%!t)l4@8+s^x8&tw6&hsp3db9lzz!n90bi@v_3r@(3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-vretinger-portfolio-ls4fh76c0ws.ws-eu116.gitpod.io']
 
@@ -123,8 +123,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_URL = '/static/'  # URL to use when referring to static files
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Where your static files live
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Where collectstatic will collect static files
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
