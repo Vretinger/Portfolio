@@ -27,11 +27,9 @@ SECRET_KEY = 'django-insecure-0=!=92t=%!t)l4@8+s^x8&tw6&hsp3db9lzz!n90bi@v_3r@(3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-vretinger-portfolio-ls4fh76c0ws.ws-eu116.gitpod.io']
+ALLOWED_HOSTS = ['8000-vretinger-portfolio-ls4fh76c0ws.ws-eu116.gitpod.io','.herokuapp.com']
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-vretinger-portfolio-ls4fh76c0ws.ws-eu116.gitpod.io',
-]
+CSRF_TRUSTED_ORIGINS = ['https://8000-vretinger-portfolio-ls4fh76c0ws.ws-eu116.gitpod.io',]
 
 
 # Application definition
@@ -55,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'my_portfolio.urls'
@@ -124,8 +123,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'  # URL to use when referring to static files
-STATICFILES_DIRS = [BASE_DIR / 'static']  # Where your static files live
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Where collectstatic will collect static files
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# WhiteNoise settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
